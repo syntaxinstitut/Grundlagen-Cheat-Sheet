@@ -2,8 +2,23 @@
 
 ## Inhaltsverzeichnis
 
-[**Variablen und Konstanten**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#variablen-und-konstanten)  
-[**Rechenoperatoren**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#rechenoperatoren)  
+- [**Variablen und Konstanten**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#variablen-und-konstanten)  
+- [**Rechenoperatoren**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#rechenoperatoren)
+- [**Grundlegende Datentypen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#grundlegende-datentypen)
+- [**Typumwandlung**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#typumwandlung)
+- [**Tupel**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#tupel)
+- [**Stringoperationen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#stringoperationen)
+- [**Vergleichs- und Verknüpfungsoperationen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#vergleichs--und-verknüpfungsoperationen)
+- [**Bedingungen und Schleifen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#bedingungen-und-schleifen)
+- [**Funktionen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#funktionen)
+- [**Arrays**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#arrays)
+- [**Dictionaries**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#dictionaries)
+- [**Sets**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#sets)
+- [**Strukturen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#strukturen)
+- [**Klassen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#klassen)
+- [**Enumerationen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#enumerationen)
+- [**Optionals**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#optionals)
+- [**Fehlerbehandlung**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#fehlerbehandlung)
 
 ---
 
