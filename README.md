@@ -1,5 +1,10 @@
 # Cheat Sheet
 
+## Inhaltsverzeichnis
+
+[**Variablen und Konstanten**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#variablen-und-konstanten)  
+[**Rechenoperatoren**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#rechenoperatoren)  
+
 ---
 
 ## Variablen und Konstanten
