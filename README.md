@@ -763,7 +763,7 @@ let begruessung = "Hallo, \(name ?? "Unbekannter")!"
 print(begruessung) // Ausgabe: Hallo, Unbekannter!
 ```
 ---
-### Fehlerbehandlung
+## Fehlerbehandlung
 
 ### `do-catch`
 Fängt Fehler ab und behandelt sie.
