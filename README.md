@@ -1,4 +1,4 @@
-# Cheat Sheet
+# Swift Cheat Sheet
 
 ## Inhaltsverzeichnis
 
