@@ -19,6 +19,8 @@
 - [**Enumerationen**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#enumerationen)
 - [**Optionals**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#optionals)
 - [**Fehlerbehandlung**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#fehlerbehandlung)
+- [**Closures**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#closures)
+- [**Shorthand**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#shorthand)
 
 ## Schlüsselwortverzeichnis
 
@@ -650,6 +652,12 @@ print(ergebnis) // Ausgabe: "Apfel Banane Kirsche "
 ---
 ## Strukturen
 
+#### Werte-Typen (`struct`)
+
+**Kopierverhalten**:
+- Bei Werttypen wird eine Kopie des Wertes erstellt, wenn er einer neuen Variablen zugewiesen oder als Parameter an eine Funktion übergeben wird.
+- Änderungen an der Kopie beeinflussen nicht den ursprünglichen Wert.
+
 ### `struct`
 Erstellt eine Struktur.
 
@@ -664,6 +672,12 @@ print(p.x, p.y) // Ausgabe: 3 4
 ```
 ---
 ## Klassen
+
+#### Referenz-Typen (`class`)
+
+**Referenzverhalten**:
+- Bei Referenztypen wird eine Referenz auf denselben Speicherort übergeben, wenn das Objekt einer neuen Variablen zugewiesen oder als Parameter an eine Funktion übergeben wird.
+- Änderungen an der Referenz beeinflussen das ursprüngliche Objekt, da beide Variablen auf dasselbe Objekt zeigen.
 
 ### `class`
 Erstellt eine Klasse.
@@ -866,5 +880,322 @@ func begruessung() {
 begruessung()
 // Ausgabe: Hallo!
 //         Auf Wiedersehen!
+```
+---
+## Closures
+
+### Was sind Closures?
+
+Closures sind eigenständige Blöcke von Funktionalität, die Variablen und Konstanten aus ihrem umgebenden Kontext erfassen und speichern können. Sie sind flexibel und ermöglichen es, Funktionen als Parameter zu übergeben oder Codeblöcke als Rückruf (Callback) zu verwenden.
+
+### Wann nutze ich Closures?
+
+1. **Funktionen als Parameter**: Übergib Funktionen an andere Funktionen.
+
+   ```swift
+   let namen = ["Anna", "Bernd", "Clara"]
+   let sortierteNamen = namen.sorted(by: { $0 > $1 })
+   print(sortierteNamen)  // Ausgabe: ["Clara", "Bernd", "Anna"]
+   ```
+
+2. **Callbacks**: Führe Code nach einer bestimmten Aktion aus.
+
+   ```swift
+   func datenAbrufen(completion: (String) -> Void) {
+       let daten = "Daten vom Server"
+       completion(daten)
+   }
+
+   datenAbrufen { ergebnis in
+       print(ergebnis)  // Ausgabe: Daten vom Server
+   }
+   ```
+
+3. **Einfache Aufgaben**: Nutze `map`, `filter` und `reduce` für kompakte Aufgaben.
+
+   ```swift
+   let zahlen = [1, 2, 3, 4, 5]
+   let verdoppelteZahlen = zahlen.map { $0 * 2 }
+   print(verdoppelteZahlen)  // Ausgabe: [2, 4, 6, 8, 10]
+   ```
+
+4. **Werte erfassen**: Speicher und manipuliere Werte aus dem Kontext.
+
+   ```swift
+   func erstelleInkrementierer() -> () -> Int {
+       var gesamt = 0
+       let inkrementierer: () -> Int = {
+           gesamt += 1
+           return gesamt
+       }
+       return inkrementierer
+   }
+
+   let inkrementieren = erstelleInkrementierer()
+   print(inkrementieren())  // Ausgabe: 1
+   print(inkrementieren())  // Ausgabe: 2
+   ```
+
+### 1. Closures als Variablen
+
+#### Beispiel 1: Closure ohne Parameter und Rückgabewert
+```swift
+let simpleClosure: () -> Void = {
+    print("This is a simple closure.")
+}
+
+simpleClosure()  // Ausgabe: This is a simple closure.
+```
+
+#### Beispiel 2: Closure mit Parametern und Rückgabewert
+```swift
+let addTwoNumbers: (Int, Int) -> Int = { (a: Int, b: Int) -> Int in
+    return a + b
+}
+
+let result = addTwoNumbers(3, 5)
+print(result)  // Ausgabe: 8
+```
+
+### 2. Closures als Argumente von Funktionen
+
+#### Beispiel 1: Closure als Argument einer Funktion
+```swift
+func performOperation(_ operation: () -> Void) {
+    operation()
+}
+
+performOperation {
+    print("Operation performed.")
+}  // Ausgabe: Operation performed.
+```
+
+#### Beispiel 2: Closure mit Rückgabewert als Argument einer Funktion
+```swift
+func performCalculation(_ calculation: (Int, Int) -> Int) {
+    let result = calculation(4, 7)
+    print("Calculation result: \(result)")
+}
+
+performCalculation { (a: Int, b: Int) -> Int in
+    return a * b
+}  // Ausgabe: Calculation result: 28
+```
+
+### 3. Closures als Rückgabewerte von Funktionen
+
+#### Beispiel 1: Funktion gibt eine einfache Closure zurück
+```swift
+func erstelleBegrüßung() -> () -> String {
+    return {
+        return "Hallo, Welt!"
+    }
+}
+
+let begrüßungsClosure = erstelleBegrüßung()
+print(begrüßungsClosure())  // Ausgabe: Hallo, Welt!
+```
+
+#### Beispiel 2: Funktion gibt eine Closure mit Parametern zurück
+```swift
+func erstelleAddierer(x: Int) -> (Int) -> Int {
+    return { y in
+        return x + y
+    }
+}
+
+let addiereFünf = erstelleAddierer(x: 5)
+print(addiereFünf(10))  // Ausgabe: 15
+```
+
+### 4. Trailing Closures
+
+#### Beispiel 1: Einfache Trailing Closure
+```swift
+func führeOperationMitTrailingClosureAus(abschluss: () -> Void) {
+    print("Operation wird ausgeführt...")
+    abschluss()
+}
+
+führeOperationMitTrailingClosureAus {
+    print("Operation abgeschlossen.")
+}  // Ausgabe: Operation wird ausgeführt...
+   //         Operation abgeschlossen.
+```
+
+#### Beispiel 2: Trailing Closure mit Parametern und Rückgabewert
+```swift
+func berechnungMitTrailingClosure(a: Int, b: Int, berechnung: (Int, Int) -> Int) {
+    let ergebnis = berechnung(a, b)
+    print("Berechnungsergebnis: \(ergebnis)")
+}
+
+berechnungMitTrailingClosure(a: 3, b: 7) { (x, y) in
+    return x * y
+}  // Ausgabe: Berechnungsergebnis: 21
+```
+
+### 5. Capturing Values
+
+#### Beispiel 1: Closure, die Werte einfängt
+```swift
+func erstelleInkrementierer() -> () -> Int {
+    var gesamt = 0
+    let inkrementierer: () -> Int = {
+        gesamt += 1
+        return gesamt
+    }
+    return inkrementierer
+}
+
+let inkrementieren = erstelleInkrementierer()
+print(inkrementieren())  // Ausgabe: 1
+print(inkrementieren())  // Ausgabe: 2
+```
+
+#### Beispiel 2: Closure, die mehrere Werte einfängt
+```swift
+func erstelleMultiplikator(multiplier: Int) -> (Int) -> Int {
+    return { zahl in
+        return zahl * multiplier
+    }
+}
+
+let multipliziereMitDrei = erstelleMultiplikator(multiplier: 3)
+print(multipliziereMitDrei(10))  // Ausgabe: 30
+```
+---
+## Shorthand
+
+### Was ist Shorthand?
+
+Shorthand-Syntax ist eine kompakte Schreibweise für Closures, die dir hilft, Code lesbarer und kürzer zu machen. Sie vereinfacht den Code, indem sie einige der Standard-Parameter- und Rückgabewert-Deklarationen weglässt. Shorthand verwendet Platzhalter wie `$0`, `$1`, `$2` usw., um auf die Parameter des Closures zuzugreifen, anstatt ihnen Namen zu geben.
+
+### Wann nutze ich die Shorthand-Syntax?
+
+1. **Für einfache Operationen in Closures**: Wenn du einfache Operationen durchführst, kannst du Shorthand-Syntax verwenden, um den Code kürzer und klarer zu gestalten.
+
+   **Beispiel:** 
+   ```swift
+   let zahlen = [1, 2, 3]
+   let verdoppelt = zahlen.map { $0 * 2 }
+   print(verdoppelt)  // Ausgabe: [2, 4, 6]
+   ```
+   Hier wird `$0` als Platzhalter für das erste Argument des Closures verwendet.
+
+2. **Für Funktionen wie `reduce`, `filter`, und `map`**: Diese Funktionen profitieren von Shorthand-Syntax, da du häufig kurze Operationen in Closures durchführst.
+
+   **Beispiel für `reduce`:**
+   ```swift
+   let zahlen = [1, 2, 3]
+   let summe = zahlen.reduce(0) { $0 + $1 }
+   print(summe)  // Ausgabe: 6
+   ```
+   `$0` und `$1` repräsentieren die aktuellen und die vorherigen Werte beim Reduzieren der Liste.
+
+3. **Für `contains` und `isEmpty`**: Shorthand-Syntax hilft, wenn du prüfen willst, ob ein Array ein bestimmtes Element enthält oder leer ist.
+
+   **Beispiel für `contains`:**
+   ```swift
+   let wörter = ["Apfel", "Banane"]
+   let enthältBanane = wörter.contains { $0 == "Banane" }
+   print(enthältBanane)  // Ausgabe: true
+   ```
+   `$0` repräsentiert jedes Element im Array während der Überprüfung.
+
+### 1. Shorthand-Syntax für `map`
+
+#### Beispiel 1: Verdopplung von Zahlen
+```swift
+let zahlen = [1, 2, 3, 4, 5]
+let verdoppelteZahlen = zahlen.map { $0 * 2 }
+print(verdoppelteZahlen)  // Ausgabe: [2, 4, 6, 8, 10]
+```
+
+#### Beispiel 2: Konvertierung von Ganzzahlen zu Strings
+```swift
+let zahlen = [1, 2, 3, 4, 5]
+let zahlenAlsString = zahlen.map { "\($0)" }
+print(zahlenAlsString)  // Ausgabe: ["1", "2", "3", "4", "5"]
+```
+
+### 2. Shorthand-Syntax für `filter`
+
+#### Beispiel 1: Filtern von geraden Zahlen
+```swift
+let zahlen = [1, 2, 3, 4, 5, 6]
+let geradeZahlen = zahlen.filter { $0 % 2 == 0 }
+print(geradeZahlen)  // Ausgabe: [2, 4, 6]
+```
+
+#### Beispiel 2: Filtern von Zahlen größer als 3
+```swift
+let zahlen = [1, 2, 3, 4, 5, 6]
+let großeZahlen = zahlen.filter { $0 > 3 }
+print(großeZahlen)  // Ausgabe: [4, 5, 6]
+```
+
+### 3. Shorthand-Syntax für `reduce`
+
+#### Beispiel 1: Summe der Zahlen
+```swift
+let zahlen = [1, 2, 3, 4, 5]
+let summe = zahlen.reduce(0) { $0 + $1 }
+print(summe)  // Ausgabe: 15
+```
+
+#### Beispiel 2: Produkt der Zahlen
+```swift
+let zahlen = [1, 2, 3, 4, 5]
+let produkt = zahlen.reduce(1) { $0 * $1 }
+print(produkt)  // Ausgabe: 120
+```
+
+### 4. Shorthand-Syntax für `contains`
+
+#### Beispiel 1: Überprüfen, ob ein Array eine bestimmte Zahl enthält
+```swift
+let zahlen = [1, 2, 3, 4, 5]
+let enthältDrei = zahlen.contains { $0 == 3 }
+print(enthältDrei)  // Ausgabe: true
+```
+
+#### Beispiel 2: Überprüfen, ob ein Array ein bestimmtes Wort enthält
+```swift
+let wörter = ["Apfel", "Banane", "Kirsche"]
+let enthältBanane = wörter.contains { $0 == "Banane" }
+print(enthältBanane)  // Ausgabe: true
+```
+
+### 5. Shorthand-Syntax für `isEmpty`
+
+#### Beispiel 1: Überprüfen, ob ein Array leer ist
+```swift
+let leerArray: [Int] = []
+let istLeer = leerArray.isEmpty
+print(istLeer)  // Ausgabe: true
+```
+
+#### Beispiel 2: Überprüfen, ob ein Array mit Wörtern leer ist
+```swift
+let wörter: [String] = ["Apfel", "Banane"]
+let istLeer = wörter.isEmpty
+print(istLeer)  // Ausgabe: false
+```
+
+### 6. Shorthand-Syntax für `map` mit mehr Parametern
+
+#### Beispiel 1: Multiplizieren von Zahlen und Addieren von 10
+```swift
+let zahlen = [1, 2, 3]
+let ergebnisse = zahlen.map { $0 * 2 + 10 }
+print(ergebnisse)  // Ausgabe: [12, 14, 16]
+```
+
+#### Beispiel 2: Formatieren von Datumswerten zu Strings
+```swift
+let daten = [Date(), Date().addingTimeInterval(86400)] // Heute und morgen
+let formatierteDaten = daten.map { "\($0)" }
+print(formatierteDaten)  // Ausgabe: z.B. ["2024-08-01 00:00:00 +0000", "2024-08-02 00:00:00 +0000"]
 ```
 ---
