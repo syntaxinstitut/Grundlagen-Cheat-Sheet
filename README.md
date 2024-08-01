@@ -656,7 +656,7 @@ print(ergebnis) // Ausgabe: "Apfel Banane Kirsche "
 
 **Kopierverhalten**:
 - Bei Werttypen wird eine Kopie des Wertes erstellt, wenn er einer neuen Variablen zugewiesen oder als Parameter an eine Funktion übergeben wird.
-- Änderungen an der Kopie beeinflussen nicht den ursprünglichen Wert.
+- Änderungen an der Kopie beeinflussen nicht den ursprünglichen Wert, da beide Variablen eine eigene Kopie enthalten.
 
 ### `struct`
 Erstellt eine Struktur.
@@ -675,8 +675,8 @@ print(p.x, p.y) // Ausgabe: 3 4
 
 #### Referenz-Typen (`class`)
 
-**Referenzverhalten**:
-- Bei Referenztypen wird eine Referenz auf denselben Speicherort übergeben, wenn das Objekt einer neuen Variablen zugewiesen oder als Parameter an eine Funktion übergeben wird.
+**Kopierverhalten**:
+- Bei Referenztypen wird eine Referenz auf denselben Speicherort kopiert, wenn das Objekt einer neuen Variablen zugewiesen oder als Parameter an eine Funktion übergeben wird.
 - Änderungen an der Referenz beeinflussen das ursprüngliche Objekt, da beide Variablen auf dasselbe Objekt zeigen.
 
 ### `class`
@@ -887,54 +887,6 @@ begruessung()
 ### Was sind Closures?
 
 Closures sind eigenständige Blöcke von Funktionalität, die Variablen und Konstanten aus ihrem umgebenden Kontext erfassen und speichern können. Sie sind flexibel und ermöglichen es, Funktionen als Parameter zu übergeben oder Codeblöcke als Rückruf (Callback) zu verwenden.
-
-### Wann nutze ich Closures?
-
-1. **Funktionen als Parameter**: Übergib Funktionen an andere Funktionen.
-
-   ```swift
-   let namen = ["Anna", "Bernd", "Clara"]
-   let sortierteNamen = namen.sorted(by: { $0 > $1 })
-   print(sortierteNamen)  // Ausgabe: ["Clara", "Bernd", "Anna"]
-   ```
-
-2. **Callbacks**: Führe Code nach einer bestimmten Aktion aus.
-
-   ```swift
-   func datenAbrufen(completion: (String) -> Void) {
-       let daten = "Daten vom Server"
-       completion(daten)
-   }
-
-   datenAbrufen { ergebnis in
-       print(ergebnis)  // Ausgabe: Daten vom Server
-   }
-   ```
-
-3. **Einfache Aufgaben**: Nutze `map`, `filter` und `reduce` für kompakte Aufgaben.
-
-   ```swift
-   let zahlen = [1, 2, 3, 4, 5]
-   let verdoppelteZahlen = zahlen.map { $0 * 2 }
-   print(verdoppelteZahlen)  // Ausgabe: [2, 4, 6, 8, 10]
-   ```
-
-4. **Werte erfassen**: Speicher und manipuliere Werte aus dem Kontext.
-
-   ```swift
-   func erstelleInkrementierer() -> () -> Int {
-       var gesamt = 0
-       let inkrementierer: () -> Int = {
-           gesamt += 1
-           return gesamt
-       }
-       return inkrementierer
-   }
-
-   let inkrementieren = erstelleInkrementierer()
-   print(inkrementieren())  // Ausgabe: 1
-   print(inkrementieren())  // Ausgabe: 2
-   ```
 
 ### 1. Closures als Variablen
 
