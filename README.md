@@ -6,7 +6,7 @@ Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enth
 
 Nutze das Cheat Sheet jederzeit als Hilfe bei der Lösung der Aufgaben oder beim Programmieren eigener Projekte. Cheat Sheets sind in der Programmierung ein beliebtes und nützliches Mittel und du findest im Internet noch zahlreiche andere Cheat Sheets zu Swift oder einem anderen Programmierthema.
 
-Eine weitere sehr gute Quelle für Informationen bietet auch wie immer die [offizielle Swift-Dokumentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/).
+Weitere sehr gute Quellen für Informationen bieten auch wie immer die [offizielle Swift-Dokumentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/) und die [offizielle Apple-Dokumentation](https://developer.apple.com/documentation/swift/).
 
 ## Inhaltsverzeichnis
 
