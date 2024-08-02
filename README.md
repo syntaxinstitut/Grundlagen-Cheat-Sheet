@@ -1,8 +1,8 @@
 # Swift Cheat Sheet
 
-Dieses Cheat Sheet ist eine Sammlung von Swift-Konzepten mit kurzen Erklärungen und Beispielen. Hier kannst du schnell nochmal Themen oder Schlüsselwörter nachschlagen. Das Cheat Sheet beinhaltet alles, was im Modul "Grundlagen der Programmierung mit Swift" gelehrt wird und noch mehr. Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enthält; du muss nur wissen, wie du es in diesem Sheet nachschlagen kannst. 
+Dieses Cheat Sheet ist eine Sammlung von Swift-Konzepten mit kurzen Erklärungen und Beispielen. Hier kannst du schnell nochmal Themen oder Schlüsselwörter nachschlagen. Das Cheat Sheet beinhaltet alles, was im Modul "Grundlagen der Programmierung mit Swift" gelehrt wird und noch mehr. Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enthält; du muss nur wissen, wie du es in diesem Sheet nachschlagen kannst.
 
-Nutze das Cheat Sheet jederzeit als Hilfe bei der Lösung der Aufgaben oder beim Programmieren eigener Projekte. Cheat Sheets sind in der Programmierung ein beliebtes und nützliches Mittel und du findest im Internet noch zahlreiche andere Cheat Sheets zu Swift oder einem anderen Programmierthema. 
+Nutze das Cheat Sheet jederzeit als Hilfe bei der Lösung der Aufgaben oder beim Programmieren eigener Projekte. Cheat Sheets sind in der Programmierung ein beliebtes und nützliches Mittel und du findest im Internet noch zahlreiche andere Cheat Sheets zu Swift oder einem anderen Programmierthema.
 
 Eine weitere sehr gute Quelle für Informationen bietet auch wie immer die [offizielle Swift-Dokumentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/).
 
@@ -41,7 +41,7 @@ Eine weitere sehr gute Quelle für Informationen bietet auch wie immer die [offi
 Erstellt eine Variable, die sich ändern kann.
 
 ```swift
-var alter = 25
+var alter: Int = 25
 alter = 26
 print(alter) // Ausgabe: 26
 ```
@@ -53,7 +53,7 @@ print(alter) // Ausgabe: 26
 Erstellt eine Konstante, die sich nicht ändern kann.
 
 ```swift
-let name = "Hans"
+let name: String = "Hans"
 // name = "Peter" // Fehler: Cannot assign to value: 'name' is a 'let' constant
 print(name) // Ausgabe: Hans
 ```
@@ -67,11 +67,11 @@ print(name) // Ausgabe: Hans
 Führt grundlegende mathematische Operationen durch.
 
 ```swift
-let summe = 5 + 3       // Addition
-let differenz = 5 - 3   // Subtraktion
-let produkt = 5 * 3     // Multiplikation
-let quotient = 6 / 3    // Division
-let rest = 5 % 2        // Modulo
+let summe: Int = 5 + 3       // Addition
+let differenz: Int = 5 - 3   // Subtraktion
+let produkt: Int = 5 * 3     // Multiplikation
+let quotient: Int = 6 / 3    // Division
+let rest: Int = 5 % 2        // Modulo
 print(summe, differenz, produkt, quotient, rest)
 // Ausgabe: 8 2 15 2 1
 ```
@@ -103,11 +103,11 @@ Wandelt einen Wert in einen anderen Typ um.
 
 ```swift
 let zahl: Double = 10.5
-let ganzeZahl = Int(zahl)
+let ganzeZahl: Int = Int(zahl)
 print(ganzeZahl) // Ausgabe: 10
 
 let optionalZahl: Any = 5
-if let umgewandelteZahl = optionalZahl as? Int {
+if let umgewandelteZahl: Int = optionalZahl as? Int {
     print(umgewandelteZahl)
 }
 // Ausgabe: 5
@@ -122,7 +122,7 @@ if let umgewandelteZahl = optionalZahl as? Int {
 Speichert mehrere Werte in einer einzelnen Variablen.
 
 ```swift
-let person = (name: "Anna", alter: 28)
+let person: (name: String, alter: Int) = (name: "Anna", alter: 28)
 print(person.name) // Ausgabe: Anna
 print(person.alter) // Ausgabe: 28
 ```
@@ -136,13 +136,13 @@ print(person.alter) // Ausgabe: 28
 Verkettet Strings und interpoliert Variablen in Strings.
 
 ```swift
-let vorname = "Hans"
-let nachname = "Müller"
-let vollerName = vorname + " " + nachname
+let vorname: String = "Hans"
+let nachname: String = "Müller"
+let vollerName: String = vorname + " " + nachname
 print(vollerName) // Ausgabe: Hans Müller
 
-let alter = 30
-let begruessung = "Hallo, mein Name ist \(vorname) und ich bin \(alter) Jahre alt."
+let alter: Int = 30
+let begruessung: String = "Hallo, mein Name ist \(vorname) und ich bin \(alter) Jahre alt."
 print(begruessung)
 // Ausgabe: Hallo, mein Name ist Hans und ich bin 30 Jahre alt.
 ```
@@ -156,8 +156,8 @@ print(begruessung)
 Vergleicht Werte und verknüpft logische Ausdrücke.
 
 ```swift
-let a = 5
-let b = 10
+let a: Int = 5
+let b: Int = 10
 print(a == b)  // Ausgabe: false
 print(a != b)  // Ausgabe: true
 print(a < b)   // Ausgabe: true
@@ -165,8 +165,8 @@ print(a > b)   // Ausgabe: false
 print(a <= b)  // Ausgabe: true
 print(a >= b)  // Ausgabe: false
 
-let x = true
-let y = false
+let x: Bool = true
+let y: Bool = false
 print(x && y)  // Ausgabe: false
 print(x || y)  // Ausgabe: true
 print(!x)      // Ausgabe: false
@@ -181,7 +181,7 @@ print(!x)      // Ausgabe: false
 Führt Code aus, wenn eine Bedingung wahr ist.
 
 ```swift
-let alter = 20
+let alter: Int = 20
 if alter > 18 {
     print("Erwachsener")
 }
@@ -195,7 +195,7 @@ if alter > 18 {
 Führt Code aus, wenn die Bedingung falsch ist.
 
 ```swift
-let alter = 16
+let alter: Int = 16
 if alter > 18 {
     print("Erwachsener")
 } else {
@@ -211,7 +211,7 @@ if alter > 18 {
 Fügt eine zusätzliche Bedingung hinzu.
 
 ```swift
-let alter = 18
+let alter: Int = 18
 if alter > 18 {
     print("Erwachsener")
 } else if alter == 18 {
@@ -246,7 +246,7 @@ for i in 1...5 {
 Iteriert über eine Sequenz von Elementen.
 
 ```swift
-let namen = ["Anna", "Bernd", "Clara"]
+let namen: [String] = ["Anna", "Bernd", "Clara"]
 for name in namen {
     print("Hallo, \(name)!")
 }
@@ -262,7 +262,7 @@ for name in namen {
 Wiederholt Code, solange eine Bedingung wahr ist.
 
 ```swift
-var zaehler = 0
+var zaehler: Int = 0
 while zaehler < 5 {
     print(zaehler)
     zaehler += 1
@@ -281,7 +281,7 @@ while zaehler < 5 {
 Wiederholt Code mindestens einmal, dann solange eine Bedingung wahr ist.
 
 ```swift
-var zaehler = 0
+var zaehler: Int = 0
 repeat {
     print(zaehler)
     zaehler += 1
@@ -357,7 +357,7 @@ func addiere(a: Int, b: Int) -> Int {
     return a + b
 }
 
-let summe = addiere(a: 5, b: 3)
+let summe: Int = addiere(a: 5, b: 3)
 print(summe) // Ausgabe: 8
 ```
 
@@ -398,7 +398,7 @@ func verdoppeln(zahl: inout Int) {
     zahl *= 2
 }
 
-var wert = 10
+var wert: Int = 10
 verdoppeln(zahl: &wert)
 print(wert) // Ausgabe: 20
 ```
@@ -422,7 +422,7 @@ class Person {
     }
 }
 
-let person = Person(name: "Hans")
+let person: Person = Person(name: "Hans")
 person.begruessen() // Ausgabe: Hallo, mein Name ist Hans.
 ```
 
@@ -439,7 +439,7 @@ class Mathe {
     }
 }
 
-let summe = Mathe.addiere(a: 5, b: 3)
+let summe: Int = Mathe.addiere(a: 5, b: 3)
 print(summe) // Ausgabe: 8
 ```
 
@@ -468,8 +468,8 @@ func verbinde(strings: [String]) -> String {
     return strings.joined(separator: ", ")
 }
 
-let namen = ["Anna", "Bernd", "Clara"]
-let result = verbinde(strings: namen)
+let namen: [String] = ["Anna", "Bernd", "Clara"]
+let result: String = verbinde(strings: namen)
 print(result) // Ausgabe: Anna, Bernd, Clara
 ```
 
@@ -482,7 +482,7 @@ print(result) // Ausgabe: Anna, Bernd, Clara
 Eine geordnete Sammlung von Werten.
 
 ```swift
-var zahlen = [1, 2, 3, 4, 5]
+var zahlen: [Int] = [1, 2, 3, 4, 5]
 zahlen.append(6)
 zahlen.remove(at: 0)
 print(zahlen) // Ausgabe: [2, 3, 4, 5, 6]
@@ -497,7 +497,7 @@ print(zahlen) // Ausgabe: [2, 3, 4, 5, 6]
 Fügt ein Element an das Ende eines Arrays hinzu.
 
 ```swift
-var zahlen = [1, 2, 3]
+var zahlen: [Int] = [1, 2, 3]
 zahlen.append(4)
 print(zahlen) // Ausgabe: [1, 2, 3, 4]
 ```
@@ -509,7 +509,7 @@ print(zahlen) // Ausgabe: [1, 2, 3, 4]
 Entfernt ein Element an einer bestimmten Position im Array.
 
 ```swift
-var zahlen = [1, 2, 3, 4]
+var zahlen: [Int] = [1, 2, 3, 4]
 zahlen.remove(at: 1)
 print(zahlen) // Ausgabe: [1, 3, 4]
 ```
@@ -521,7 +521,7 @@ print(zahlen) // Ausgabe: [1, 3, 4]
 Gibt die Anzahl der Elemente im Array zurück.
 
 ```swift
-let zahlen = [1, 2, 3, 4]
+let zahlen: [Int] = [1, 2, 3, 4]
 print(zahlen.count) // Ausgabe: 4
 ```
 
@@ -543,7 +543,7 @@ print(zahlen.isEmpty) // Ausgabe: true
 Überprüft, ob ein bestimmtes Element im Array vorhanden ist.
 
 ```swift
-let zahlen = [1, 2, 3, 4]
+let zahlen: [Int] = [1, 2, 3, 4]
 print(zahlen.contains(3)) // Ausgabe: true
 ```
 
@@ -554,8 +554,8 @@ print(zahlen.contains(3)) // Ausgabe: true
 Wendet eine Funktion auf jedes Element des Arrays an und gibt ein neues Array zurück.
 
 ```swift
-let zahlen = [1, 2, 3, 4]
-let verdoppelt = zahlen.map { $0 * 2 }
+let zahlen: [Int] = [1, 2, 3, 4]
+let verdoppelt: [Int] = zahlen.map { $0 * 2 }
 print(verdoppelt) // Ausgabe: [2, 4, 6, 8]
 ```
 
@@ -566,8 +566,8 @@ print(verdoppelt) // Ausgabe: [2, 4, 6, 8]
 Filtert Elemente eines Arrays basierend auf einer Bedingung.
 
 ```swift
-let zahlen = [1, 2, 3, 4]
-let gerade = zahlen.filter { $0 % 2 == 0 }
+let zahlen: [Int] = [1, 2, 3, 4]
+let gerade: [Int] = zahlen.filter { $0 % 2 == 0 }
 print(gerade) // Ausgabe: [2, 4]
 ```
 
@@ -578,8 +578,8 @@ print(gerade) // Ausgabe: [2, 4]
 Kombiniert die Elemente eines Arrays zu einem einzelnen Wert.
 
 ```swift
-let zahlen = [1, 2, 3, 4]
-let summe = zahlen.reduce(0) { $0 + $1 }
+let zahlen: [Int] = [1, 2, 3, 4]
+let summe: Int = zahlen.reduce(0) { $0 + $1 }
 print(summe) // Ausgabe: 10
 ```
 
@@ -592,7 +592,7 @@ print(summe) // Ausgabe: 10
 Eine ungeordnete Sammlung von Schlüssel-Wert-Paaren.
 
 ```swift
-var telefonbuch = ["Anna": "12345", "Bernd": "67890"]
+var telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
 telefonbuch["Clara"] = "11223"
 telefonbuch.removeValue(forKey: "Anna")
 print(telefonbuch) // Ausgabe: ["Bernd": "67890", "Clara": "11223"]
@@ -605,7 +605,7 @@ print(telefonbuch) // Ausgabe: ["Bernd": "67890", "Clara": "11223"]
 Gibt eine Sammlung aller Schlüssel im Dictionary zurück.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
 print(Array(telefonbuch.keys)) // Ausgabe: ["Anna", "Bernd"]
 ```
 
@@ -616,7 +616,7 @@ print(Array(telefonbuch.keys)) // Ausgabe: ["Anna", "Bernd"]
 Gibt eine Sammlung aller Werte im Dictionary zurück.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
 print(Array(telefonbuch.values)) // Ausgabe: ["12345", "67890"]
 ```
 
@@ -640,7 +640,7 @@ print(telefonbuch.isEmpty) // Ausgabe: true
 Gibt die Anzahl der Schlüssel-Wert-Paare im Dictionary zurück.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
 print(telefonbuch.count) // Ausgabe: 2
 ```
 
@@ -651,7 +651,7 @@ print(telefonbuch.count) // Ausgabe: 2
 Überprüft, ob ein bestimmter Schlüssel im Dictionary vorhanden ist.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
 print(telefonbuch.keys.contains("Anna")) // Ausgabe: true
 ```
 
@@ -662,7 +662,7 @@ print(telefonbuch.keys.contains("Anna")) // Ausgabe: true
 Entfernt ein Schlüssel-Wert-Paar aus dem Dictionary.
 
 ```swift
-var telefonbuch = ["Anna": "12345", "Bernd": "67890"]
+var telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
 telefonbuch.removeValue(forKey: "Anna")
 print(telefonbuch) // Ausgabe: ["Bernd": "67890"]
 ```
@@ -674,8 +674,8 @@ print(telefonbuch) // Ausgabe: ["Bernd": "67890"]
 Wendet eine Funktion auf jedes Schlüssel-Wert-Paar an und gibt ein neues Array von Ergebnissen zurück.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
-let ergebnisse = telefonbuch.map { "\($0): \($1)" }
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
+let ergebnisse: [String] = telefonbuch.map { "\($0): \($1)" }
 print(ergebnisse) // Ausgabe: ["Anna: 12345", "Bernd: 67890"]
 ```
 
@@ -686,8 +686,8 @@ print(ergebnisse) // Ausgabe: ["Anna: 12345", "Bernd: 67890"]
 Filtert Schlüssel-Wert-Paare basierend auf einer Bedingung.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
-let gefiltert = telefonbuch.filter { $0.key.contains("n") }
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
+let gefiltert: [String: String] = telefonbuch.filter { $0.key.contains("n") }
 print(gefiltert) // Ausgabe: ["Anna": "12345", "Bernd": "67890"]
 ```
 
@@ -698,8 +698,8 @@ print(gefiltert) // Ausgabe: ["Anna": "12345", "Bernd": "67890"]
 Kombiniert die Schlüssel-Wert-Paare zu einem einzelnen Wert.
 
 ```swift
-let telefonbuch = ["Anna": "12345", "Bernd": "67890"]
-let ergebnis = telefonbuch.reduce("") { $0 + "\($1.key): \($1.value) " }
+let telefonbuch: [String: String] = ["Anna": "12345", "Bernd": "67890"]
+let ergebnis: String = telefonbuch.reduce("") { $0 + "\($1.key): \($1.value) " }
 print(ergebnis) // Ausgabe: "Anna: 12345 Bernd: 67890 "
 ```
 
@@ -712,7 +712,7 @@ print(ergebnis) // Ausgabe: "Anna: 12345 Bernd: 67890 "
 Eine ungeordnete Sammlung eindeutiger Werte.
 
 ```swift
-var obst: Set = ["Apfel", "Banane", "Kirsche"]
+var obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
 obst.insert("Orange")
 obst.remove("Banane")
 print(obst) // Ausgabe: ["Apfel", "Kirsche", "Orange"]
@@ -727,7 +727,7 @@ print(obst) // Ausgabe: ["Apfel", "Kirsche", "Orange"]
 Überprüft, ob ein bestimmtes Element im Set vorhanden ist.
 
 ```swift
-let obst: Set = ["Apfel", "Banane", "Kirsche"]
+let obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
 print(obst.contains("Apfel")) // Ausgabe: true
 ```
 
@@ -738,7 +738,7 @@ print(obst.contains("Apfel")) // Ausgabe: true
 Gibt die Anzahl der Elemente im Set zurück.
 
 ```swift
-let obst: Set = ["Apfel", "Banane", "Kirsche"]
+let obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
 print(obst.count) // Ausgabe: 3
 ```
 
@@ -749,7 +749,7 @@ print(obst.count) // Ausgabe: 3
 Überprüft, ob das Set leer ist.
 
 ```swift
-let obst: Set = []
+let obst: Set<String> = []
 print(obst.isEmpty) // Ausgabe: true
 ```
 
@@ -760,7 +760,7 @@ print(obst.isEmpty) // Ausgabe: true
 Fügt ein Element zum Set hinzu.
 
 ```swift
-var obst: Set = ["Apfel", "Banane"]
+var obst: Set<String> = ["Apfel", "Banane"]
 obst.insert("Kirsche")
 print(obst) // Ausgabe: ["Apfel", "Banane", "Kirsche"]
 ```
@@ -772,7 +772,7 @@ print(obst) // Ausgabe: ["Apfel", "Banane", "Kirsche"]
 Entfernt ein bestimmtes Element aus dem Set.
 
 ```swift
-var obst: Set = ["Apfel", "Banane", "Kirsche"]
+var obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
 obst.remove("Banane")
 print(obst) // Ausgabe: ["Apfel", "Kirsche"]
 ```
@@ -784,8 +784,8 @@ print(obst) // Ausgabe: ["Apfel", "Kirsche"]
 Wendet eine Funktion auf jedes Element des Sets an und gibt ein neues Array zurück.
 
 ```swift
-let obst: Set = ["Apfel", "Banane", "Kirsche"]
-let laengen = obst.map { $0.count }
+let obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
+let laengen: [Int] = obst.map { $0.count }
 print(laengen) // Ausgabe: [5, 6, 7]
 ```
 
@@ -796,8 +796,8 @@ print(laengen) // Ausgabe: [5, 6, 7]
 Filtert Elemente eines Sets basierend auf einer Bedingung.
 
 ```swift
-let obst: Set = ["Apfel", "Banane", "Kirsche"]
-let gefiltert = obst.filter { $0.hasPrefix("B") }
+let obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
+let gefiltert: Set<String> = obst.filter { $0.hasPrefix("B") }
 print(gefiltert) // Ausgabe: ["Banane"]
 ```
 
@@ -808,8 +808,8 @@ print(gefiltert) // Ausgabe: ["Banane"]
 Kombiniert die Elemente eines Sets zu einem einzelnen Wert.
 
 ```swift
-let obst: Set = ["Apfel", "Banane", "Kirsche"]
-let ergebnis = obst.reduce("") { $0 + $1 + " " }
+let obst: Set<String> = ["Apfel", "Banane", "Kirsche"]
+let ergebnis: String = obst.reduce("") { $0 + $1 + " " }
 print(ergebnis) // Ausgabe: "Apfel Banane Kirsche "
 ```
 
@@ -835,7 +835,7 @@ struct Punkt {
     var y: Int
 }
 
-let p = Punkt(x: 3, y: 4)
+let p: Punkt = Punkt(x: 3, y: 4)
 print(p.x, p.y) // Ausgabe: 3 4
 ```
 
@@ -870,7 +870,7 @@ class Person {
     }
 }
 
-let person = Person(name: "Hans", alter: 30)
+let person: Person = Person(name: "Hans", alter: 30)
 person.beschreibe() // Ausgabe: Mein Name ist Hans und ich bin 30 Jahre alt.
 ```
 
@@ -906,7 +906,7 @@ class Auto: Fahrzeug {
     }
 }
 
-let auto = Auto(geschwindigkeit: 120, marke: "BMW")
+let auto: Auto = Auto(geschwindigkeit: 120, marke: "BMW")
 auto.beschreibe() // Ausgabe: Das BMW fährt 120 km/h.
 ```
 
@@ -923,7 +923,7 @@ enum Wochentag {
     case montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag
 }
 
-let heute = Wochentag.mittwoch
+let heute: Wochentag = Wochentag.mittwoch
 print(heute) // Ausgabe: mittwoch
 ```
 
@@ -951,7 +951,7 @@ Entpackt sicher ein Optional.
 
 ```swift
 var name: String? = "Hans"
-if let entpackterName = name {
+if let entpackterName: String = name {
     print("Hallo, \(entpackterName)!")
 } else {
     print("Kein Name vorhanden.")
@@ -967,7 +967,7 @@ Entpackt sicher ein Optional, bricht bei `nil` aus der aktuellen Funktion aus.
 
 ```swift
 func begruessen(optionalName: String?) {
-    guard let name = optionalName else {
+    guard let name: String = optionalName else {
         print("Kein Name vorhanden.")
         return
     }
@@ -986,7 +986,7 @@ Setzt einen Standardwert, wenn ein Optional nil ist.
 
 ```swift
 var name: String? = nil
-let begruessung = "Hallo, \(name ?? "Unbekannter")!"
+let begruessung: String = "Hallo, \(name ?? "Unbekannter")!"
 print(begruessung) // Ausgabe: Hallo, Unbekannter!
 ```
 
@@ -1118,7 +1118,7 @@ let addiereZweiZahlen: (Int, Int) -> Int = { (a: Int, b: Int) -> Int in
     return a + b
 }
 
-let ergebnis = addiereZweiZahlen(3, 5)
+let ergebnis: Int = addiereZweiZahlen(3, 5)
 print(ergebnis)  // Ausgabe: 8
 ```
 
@@ -1140,7 +1140,7 @@ fuehreOperationAus {
 
 ```swift
 func fuehreBerechnungAus(_ berechnung: (Int, Int) -> Int) {
-    let ergebnis = berechnung(4, 7)
+    let ergebnis: Int = berechnung(4, 7)
     print("Berechnungsergebnis: \(ergebnis)")
 }
 
@@ -1160,7 +1160,7 @@ func erstelleBegruessung() -> () -> String {
     }
 }
 
-let begruessungsClosure = erstelleBegruessung()
+let begruessungsClosure: () -> String = erstelleBegruessung()
 print(begruessungsClosure())  // Ausgabe: Hallo, Welt!
 ```
 
@@ -1173,7 +1173,7 @@ func erstelleAddierer(x: Int) -> (Int) -> Int {
     }
 }
 
-let addiereFuenf = erstelleAddierer(x: 5)
+let addiereFuenf: (Int) -> Int = erstelleAddierer(x: 5)
 print(addiereFuenf(10))  // Ausgabe: 15
 ```
 
@@ -1197,7 +1197,7 @@ fuehreOperationMitTrailingClosureAus {
 
 ```swift
 func berechnungMitTrailingClosure(a: Int, b: Int, berechnung: (Int, Int) -> Int) {
-    let ergebnis = berechnung(a, b)
+    let ergebnis: Int = berechnung(a, b)
     print("Berechnungsergebnis: \(ergebnis)")
 }
 
@@ -1211,7 +1211,7 @@ berechnungMitTrailingClosure(a: 3, b: 7) { (x, y) in
 #### Beispiel 1: Closure, die Werte einfängt
 ```swift
 func erstelleInkrementierer() -> () -> Int {
-    var gesamt = 0
+    var gesamt: Int = 0
     let inkrementierer: () -> Int = {
         gesamt += 1
         return gesamt
@@ -1219,7 +1219,7 @@ func erstelleInkrementierer() -> () -> Int {
     return inkrementierer
 }
 
-let inkrementieren = erstelleInkrementierer()
+let inkrementieren: () -> Int = erstelleInkrementierer()
 print(inkrementieren())  // Ausgabe: 1
 print(inkrementieren())  // Ausgabe: 2
 ```
@@ -1233,7 +1233,7 @@ func erstelleMultiplikator(multiplier: Int) -> (Int) -> Int {
     }
 }
 
-let multipliziereMitDrei = erstelleMultiplikator(multiplier: 3)
+let multipliziereMitDrei: (Int) -> Int = erstelleMultiplikator(multiplier: 3)
 print(multipliziereMitDrei(10))  // Ausgabe: 30
 ```
 
@@ -1256,19 +1256,19 @@ geben.
    **Beispiel:**
 
 ```swift
-   let zahlen = [1, 2, 3]
-   let verdoppelt = zahlen.map { $0 * 2 }
+   let zahlen: [Int] = [1, 2, 3]
+   let verdoppelt: [Int] = zahlen.map { $0 * 2 }
    print(verdoppelt)  // Ausgabe: [2, 4, 6]
    ```
-   Hier wird `$0` als Platzhalter für das erste Argument des Closures verwendet.
+Hier wird `$0` als Platzhalter für das erste Argument des Closures verwendet.
 
 2. **Für Funktionen wie `reduce`, `filter`, und `map`**: Diese Funktionen profitieren von Shorthand-Syntax, da du häufig
    kurze Operationen in Closures durchführst.
 
    **Beispiel für `reduce`:**
    ```swift
-   let zahlen = [1, 2, 3]
-   let summe = zahlen.reduce(0) { $0 + $1 }
+   let zahlen: [Int] = [1, 2, 3]
+   let summe: Int = zahlen.reduce(0) { $0 + $1 }
    print(summe)  // Ausgabe: 6
    ```
    `$0` und `$1` repräsentieren die aktuellen und die vorherigen Werte beim Reduzieren der Liste.
@@ -1279,8 +1279,8 @@ geben.
    **Beispiel für `contains`:**
 
 ```swift
-   let woerter = ["Apfel", "Banane"]
-   let enthaeltBanane = woerter.contains { $0 == "Banane" }
+   let woerter: [String] = ["Apfel", "Banane"]
+   let enthaeltBanane: Bool = woerter.contains { $0 == "Banane" }
    print(enthaeltBanane)  // Ausgabe: true
 ```
 
@@ -1291,16 +1291,16 @@ geben.
 #### Beispiel 1: Verdopplung von Zahlen
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5]
-let verdoppelteZahlen = zahlen.map { $0 * 2 }
+let zahlen: [Int] = [1, 2, 3, 4, 5]
+let verdoppelteZahlen: [Int] = zahlen.map { $0 * 2 }
 print(verdoppelteZahlen)  // Ausgabe: [2, 4, 6, 8, 10]
 ```
 
 #### Beispiel 2: Konvertierung von Ganzzahlen zu Strings
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5]
-let zahlenAlsString = zahlen.map { "\($0)" }
+let zahlen: [Int] = [1, 2, 3, 4, 5]
+let zahlenAlsString: [String] = zahlen.map { "\($0)" }
 print(zahlenAlsString)  // Ausgabe: ["1", "2", "3", "4", "5"]
 ```
 
@@ -1309,16 +1309,16 @@ print(zahlenAlsString)  // Ausgabe: ["1", "2", "3", "4", "5"]
 #### Beispiel 1: Filtern von geraden Zahlen
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5, 6]
-let geradeZahlen = zahlen.filter { $0 % 2 == 0 }
+let zahlen: [Int] = [1, 2, 3, 4, 5, 6]
+let geradeZahlen: [Int] = zahlen.filter { $0 % 2 == 0 }
 print(geradeZahlen)  // Ausgabe: [2, 4, 6]
 ```
 
 #### Beispiel 2: Filtern von Zahlen größer als 3
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5, 6]
-let grosseZahlen = zahlen.filter { $0 > 3 }
+let zahlen: [Int] = [1, 2, 3, 4, 5, 6]
+let grosseZahlen: [Int] = zahlen.filter { $0 > 3 }
 print(grosseZahlen)  // Ausgabe: [4, 5, 6]
 ```
 
@@ -1327,16 +1327,16 @@ print(grosseZahlen)  // Ausgabe: [4, 5, 6]
 #### Beispiel 1: Summe der Zahlen
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5]
-let summe = zahlen.reduce(0) { $0 + $1 }
+let zahlen: [Int] = [1, 2, 3, 4, 5]
+let summe: Int = zahlen.reduce(0) { $0 + $1 }
 print(summe)  // Ausgabe: 15
 ```
 
 #### Beispiel 2: Produkt der Zahlen
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5]
-let produkt = zahlen.reduce(1) { $0 * $1 }
+let zahlen: [Int] = [1, 2, 3, 4, 5]
+let produkt: Int = zahlen.reduce(1) { $0 * $1 }
 print(produkt)  // Ausgabe: 120
 ```
 
@@ -1345,52 +1345,34 @@ print(produkt)  // Ausgabe: 120
 #### Beispiel 1: Überprüfen, ob ein Array eine bestimmte Zahl enthält
 
 ```swift
-let zahlen = [1, 2, 3, 4, 5]
-let enthaeltDrei = zahlen.contains { $0 == 3 }
+let zahlen: [Int] = [1, 2, 3, 4, 5]
+let enthaeltDrei: Bool = zahlen.contains { $0 == 3 }
 print(enthaeltDrei)  // Ausgabe: true
 ```
 
 #### Beispiel 2: Überprüfen, ob ein Array ein bestimmtes Wort enthält
 
 ```swift
-let woerter = ["Apfel", "Banane", "Kirsche"]
-let enthaeltBanane = woerter.contains { $0 == "Banane" }
+let woerter: [String] = ["Apfel", "Banane", "Kirsche"]
+let enthaeltBanane: Bool = woerter.contains { $0 == "Banane" }
 print(enthaeltBanane)  // Ausgabe: true
 ```
 
-### 5. Shorthand-Syntax für `isEmpty`
-
-#### Beispiel 1: Überprüfen, ob ein Array leer ist
-
-```swift
-let leerArray: [Int] = []
-let istLeer = leerArray.isEmpty
-print(istLeer)  // Ausgabe: true
-```
-
-#### Beispiel 2: Überprüfen, ob ein Array mit Wörtern leer ist
-
-```swift
-let woerter: [String] = ["Apfel", "Banane"]
-let istLeer = woerter.isEmpty
-print(istLeer)  // Ausgabe: false
-```
-
-### 6. Shorthand-Syntax für `map` mit mehr Parametern
+### 5. Shorthand-Syntax für `map` mit mehr Parametern
 
 #### Beispiel 1: Multiplizieren von Zahlen und Addieren von 10
 
 ```swift
-let zahlen = [1, 2, 3]
-let ergebnisse = zahlen.map { $0 * 2 + 10 }
+let zahlen: [Int] = [1, 2, 3]
+let ergebnisse: [Int] = zahlen.map { $0 * 2 + 10 }
 print(ergebnisse)  // Ausgabe: [12, 14, 16]
 ```
 
 #### Beispiel 2: Formatieren von Datumswerten zu Strings
 
 ```swift
-let daten = [Date(), Date().addingTimeInterval(86400)] // Heute und morgen
-let formatierteDaten = daten.map { "\($0)" }
+let daten: [Date] = [Date(), Date().addingTimeInterval(86400)] // Heute und morgen
+let formatierteDaten: [String] = daten.map { "\($0)" }
 print(formatierteDaten)  // Ausgabe: z.B. ["2024-08-01 00:00:00 +0000", "2024-08-02 00:00:00 +0000"]
 ```
 
