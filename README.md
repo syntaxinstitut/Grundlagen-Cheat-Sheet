@@ -2,7 +2,7 @@
 
 Dieses Cheat Sheet ist eine Sammlung von Swift-Konzepten mit kurzen Erklärungen und Beispielen. Hier kannst du schnell nochmal Themen oder Schlüsselwörter nachschlagen. Das Cheat Sheet beinhaltet alles, was im Modul _**Grundlagen der Programmierung mit Swift**_ gelehrt wird <ins>und noch mehr</ins>. 
 
-Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enthält; du muss nur wissen, wie du es in diesem Sheet nachschlagen kannst.
+Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enthält; du muss nur wissen, wie du es nachschlagen kannst.
 
 Nutze das Cheat Sheet jederzeit als Hilfe bei der Lösung der Aufgaben oder beim Programmieren eigener Projekte. Cheat Sheets sind in der Programmierung ein beliebtes und nützliches Mittel und du findest im Internet noch zahlreiche andere Cheat Sheets zu Swift oder einem anderen Programmierthema.
 
