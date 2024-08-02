@@ -1,4 +1,4 @@
-# Swift Cheat Sheet
+# <img src="https://github.com/devicons/devicon/blob/master/icons/swift/swift-original.svg" height="24"/> Swift Cheat Sheet
 
 Dieses Cheat Sheet ist eine Sammlung von Swift-Konzepten mit kurzen Erklärungen und Beispielen. Hier kannst du schnell nochmal Themen oder Schlüsselwörter nachschlagen. Das Cheat Sheet beinhaltet alles, was im Modul "Grundlagen der Programmierung mit Swift" gelehrt wird und noch mehr. Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enthält; du muss nur wissen, wie du es in diesem Sheet nachschlagen kannst.
 
