@@ -1,5 +1,7 @@
 # Swift Cheat Sheet
 
+Dieses Cheat Sheet ist eine Sammlung von Swift-Konzepten mit kurzen Erklärungen und Beispielen. Hier kannst du schnell nochmal Themen oder Schlüsselwörter nachschlagen. Das Cheat Sheet beinhaltet alles, was im Modul "Grundlagen der Programmierung mit Swift" gelehrt wird und noch mehr. Keine Sorge, du musst nicht alles auswendig können, was dieses Cheat Sheet enthält; du muss nur wissen, wie du es in diesem Sheet nachschlagen kannst. Nutze das Cheat Sheet jederzeit als Hilfe bei der Lösung der Aufgaben oder beim Programmieren eigener Projekte. Cheat Sheets sind in der Programmierung ein beliebtes und nützliches Mittel und du findest im Internet noch zahlreiche andere Cheat Sheets zu Swift oder einem anderen Programmierthema. Eine weitere sehr gute Quelle für Informationen bietet auch wie immer die [offizielle Swift-Dokumentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/).
+
 ## Inhaltsverzeichnis
 
 - [**Variablen und Konstanten**](https://github.com/syntaxinstitut/Grundlagen-Cheat-Sheet?tab=readme-ov-file#variablen-und-konstanten)
